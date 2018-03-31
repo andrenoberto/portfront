@@ -13,9 +13,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "mkdirp src/components/bootstrap/ src/components/font-awesome/ ",
+    "preinstall": "mkdirp src/components/bootstrap/ src/components/font-awesome/ src/components/css/",
     "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
-    "node-sass": "node-sass --output-style compressed -o src/sass src/components/css/portfront.css"
+    "node-sass": "node-sass --output-style compressed src/sass/portfront.scss -o src/components/css/"
   },
   "author": "",
   "license": "ISC"
