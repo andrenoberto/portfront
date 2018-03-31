@@ -1,3 +1,5 @@
 .header-animated {
-  height: 300px;
+  $header-height: 300px;
+
+  height: $header-height;
 }
