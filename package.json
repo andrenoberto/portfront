@@ -1,7 +1,7 @@
 {
   "name": "portfront",
   "version": "1.0.0",
-  "description": "",
+  "description": "A portfolio detailing my experience as a web developer",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^4.0.0",
@@ -17,6 +17,10 @@
     "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
     "node-sass": "node-sass --output-style compressed src/sass/portfront.scss -o src/components/css/"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrenoberto/portfront.git"
+  },
+  "author": "Andre Noberto",
   "license": "ISC"
 }
