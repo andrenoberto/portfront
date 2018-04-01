@@ -1,5 +1,3 @@
 /node_modules/
 /.idea/
-/src/components/
-/src/css/
-/src/images/
+/src/assets/*
