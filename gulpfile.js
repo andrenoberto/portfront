@@ -5,7 +5,7 @@ gulp.task('default', ['sass', 'watch']);
 
 gulp.task('sass', () => {
     gulp.src('./sass/**/*.scss')
-        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest('./src/css/'));
 });
 
