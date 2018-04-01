@@ -2,6 +2,38 @@
 @import "../images";
 @import "../variables";
 
+@keyframes animate-scene {
+  from {
+    transform: translateX(-50%) translateZ(0);
+  }
+  to {
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@mixin animation-asset($url, $options) {
+  animation: animate-scene $options;
+  background-image: url($url);
+}
+
 .jumbotron {
   &.header-animated {
     border-radius: 0;
@@ -9,23 +41,70 @@
 }
 
 .header-animated {
-  background-color: $main-color;
+  background: linear-gradient(#0f1b1c, #2f3640);
+  background-size: auto 100%;
+  overflow: hidden;
   padding: 90px 0 0 0;
 
   &__illustration {
-    background: url($scene_960) center top;
+    background: url($scene-960) center top;
     background-size: auto 100%;
     height: $header-height / 2;
 
+    & > div {
+      display: none;
+    }
+
     @media screen and (min-width: 480px) {
-      background: url($scene_1530) center top;
+      background: url($scene-1530) center top;
       background-size: auto 100%;
       height: $header-height / 2;
     }
 
     @media screen and (min-width: 960px) {
-      background: url($scene) center top;
+      background: transparent;
       height: $header-height;
+      position: relative;
+
+      & > div {
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: $scenario-width * 2;
+      }
+
+      @each $key, $value in $generic-assets-to-animate {
+        .#{$key} {
+          @include animation-asset("../images/#{$key}.png", $value)
+        }
+      }
+
+      .cloud-back {
+        animation: animate-scene 280s linear infinite;
+        background: url($cloud-back) repeat-x center bottom;
+        background-size: auto 40%;
+        opacity: .6;
+      }
+
+      .cloud-front {
+        animation: animate-scene 350s linear infinite reverse;
+        background: url($cloud-back) repeat-x center bottom;
+        background-size: auto 25%;
+        opacity: .8;
+      }
+
+      .stars {
+        background-size: 25%;
+        opacity: .5;
+      }
+
+      .stars-front {
+        background-size: 30%;
+        opacity: .7;
+      }
     }
   }
 
@@ -37,7 +116,7 @@
   }
 
   &__title {
-    color: $dracula-orchid;
+    color: $space-astronaut;
     font-size: 38px;
     font-weight: bold;
   }

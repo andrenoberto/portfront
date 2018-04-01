@@ -1,3 +1,19 @@
+$cloud-back: "../images/cloud-back.png";
+$cloud-front: "../images/cloud-front.png";
+
+$generic-assets-to-animate: (
+        astronaut: 70s linear infinite,
+        planets: 110s linear infinite,
+        planets-front: 90s linear infinite reverse,
+        stars: 220s linear infinite,
+        stars-front: 180s linear infinite reverse,
+);
+
+$scenario-width: 2400px;
+$scenario-height: 300px;
+$stars-background-width: 1200px;
+$stars-background-height: 500px;
+
 $scene: "../images/cenario_bg.png";
-$scene_960: "../images/cenario_all_960.png";
-$scene_1530: "../images/cenario_all_1530.png";
+$scene-960: "../images/cenario_all_960.png";
+$scene-1530: "../images/cenario_all_1530.png";
