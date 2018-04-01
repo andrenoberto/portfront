@@ -1,3 +1,4 @@
+@import "../images";
 @import "../variables";
 
 .jumbotron {
@@ -8,7 +9,26 @@
 
 .header-animated {
   background-color: $main-color;
-  height: $header-height;
+  padding: 90px 0 0 0;
+
+  &__illustration {
+    background: url($scene_960) center top;
+    background-size: auto 100%;
+    height: $header-height / 2;
+  }
+
+  &__subtitle {
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+
+  &__title {
+    color: #00151a;
+    font-size: 38px;
+    font-weight: bold;
+  }
 }
 
 .header-nav {
