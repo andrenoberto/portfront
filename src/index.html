@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/portfront.css">
 </head>
-<body>
-<nav class="navigation">
+<body class="non-static">
+<nav class="header-nav">
     <div class="container">
-        <a href="index.html" class="navigation-logo">Front-End Engineer</a>
-        <button class="navigation-sidebar" type="button">
-            <span class="navigation-parties">MENU</span>
+        <a href="index.html" class="header-nav__logo">
+            <img src="images/logo.svg" alt="Front-End Engineer">
+        </a>
+        <button class="header-nav__navbar" type="button">
+            <span class="header-nav__menu--parties">
+                <span class="sr-only">Menu</span>
+                <span class="fa fa-bars" aria-hidden="true"></span>
+            </span>
         </button>
-        <ul class="navigation-menu-opened">
+        <ul class="header-nav__menu">
             <li>
                 <a href="#">jobs</a>
             </li>
