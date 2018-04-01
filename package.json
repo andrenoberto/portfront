@@ -8,14 +8,15 @@
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "mkdirp": "^0.5.1",
-    "node-sass": "^4.8.3"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.2.1",
+    "mkdirp": "^0.5.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "mkdirp src/components/bootstrap/ src/components/font-awesome/ src/css/",
-    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/ && npm run node-sass",
-    "node-sass": "node-sass --output-style compressed sass/portfront.scss -o src/css/"
+    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
