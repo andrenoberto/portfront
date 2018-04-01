@@ -1,3 +1,4 @@
+@import "../colors";
 @import "../images";
 @import "../variables";
 
@@ -15,17 +16,26 @@
     background: url($scene_960) center top;
     background-size: auto 100%;
     height: $header-height / 2;
+
+    @media screen and (min-width: 480px) {
+      background-image: url($scene_1530) center top;
+    }
+
+    @media screen and (min-width: 960px) {
+      background-image: url($scene) center top;
+      height: $header-height;
+    }
   }
 
   &__subtitle {
-    color: white;
+    color: $clouds;
     font-size: 30px;
     font-weight: normal;
     line-height: 1.5;
   }
 
   &__title {
-    color: #00151a;
+    color: $dracula-orchid;
     font-size: 38px;
     font-weight: bold;
   }
@@ -41,7 +51,7 @@
 
     a {
       border-top: 1px solid darken($main-color, 5%);
-      color: white;
+      color: $clouds;
       display: block;
       font-size: 1.5em;
       padding: 1em;
@@ -80,7 +90,7 @@
     .non-static & {
       background: transparent;
       border: none;
-      color: white;
+      color: $clouds;
       display: inline-block;
       font-size: 2em;
       float: right;
