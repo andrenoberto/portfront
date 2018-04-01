@@ -18,11 +18,13 @@
     height: $header-height / 2;
 
     @media screen and (min-width: 480px) {
-      background-image: url($scene_1530) center top;
+      background: url($scene_1530) center top;
+      background-size: auto 100%;
+      height: $header-height / 2;
     }
 
     @media screen and (min-width: 960px) {
-      background-image: url($scene) center top;
+      background: url($scene) center top;
       height: $header-height;
     }
   }
