@@ -85,14 +85,12 @@
       .cloud-back {
         animation: animate-scene 280s linear infinite;
         background: url($cloud-back) repeat-x center bottom;
-        background-size: auto 40%;
         opacity: .6;
       }
 
       .cloud-front {
         animation: animate-scene 350s linear infinite reverse;
-        background: url($cloud-back) repeat-x center bottom;
-        background-size: auto 25%;
+        background: url($cloud-front) repeat-x center bottom;
         opacity: .8;
       }
 
