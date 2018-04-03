@@ -2,7 +2,7 @@
 @import "../images";
 @import "../variables";
 
-@keyframes animate-scene {
+@keyframes animate-linear {
   from {
     transform: translateX(-50%) translateZ(0);
   }
@@ -11,26 +11,21 @@
   }
 }
 
-@keyframes move-twink-back {
+@keyframes animate-flip {
   from {
-    background-position: 0 0;
+    transform: translateX(-50%) translateZ(0) scaleX(-1);
   }
   to {
-    background-position: -10000px 5000px;
+    transform: translateX(0) translateZ(0) scaleX(-1);
   }
 }
 
-@keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
+.flip {
+  transform: scaleX(-1);
 }
 
 @mixin animation-asset($url, $options) {
-  animation: animate-scene $options;
+  animation: animate-linear $options;
   background-image: url($url);
 }
 
@@ -83,14 +78,14 @@
       }
 
       .cloud-back {
-        animation: animate-scene 280s linear infinite;
-        background: url($cloud-back) repeat-x center bottom;
+        animation: animate-flip 280s linear infinite;
+        background: url($cloud) repeat-x center bottom;
         opacity: .6;
       }
 
       .cloud-front {
-        animation: animate-scene 350s linear infinite reverse;
-        background: url($cloud-front) repeat-x center bottom;
+        animation: animate-linear 350s linear infinite reverse;
+        background: url($cloud) repeat-x center bottom;
         opacity: .8;
       }
 
