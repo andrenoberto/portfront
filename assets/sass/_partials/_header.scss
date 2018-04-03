@@ -20,10 +20,6 @@
   }
 }
 
-.flip {
-  transform: scaleX(-1);
-}
-
 @mixin animation-asset($url, $options) {
   animation: animate-linear $options;
   background-image: url($url);
