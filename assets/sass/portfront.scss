@@ -1,3 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Sansita');
 @import "base";
 @import "_partials/header";
+@import "_partials/card";
+@import "variables";
+
+@each $key, $value in $sizes {
+  .#{$key} {
+    font-size: $value;
+  }
+}
+
+.section-title {
+  padding: 1em;
+}
