@@ -1,0 +1,78 @@
+@import "../colors";
+@import "../variables";
+
+@mixin shadow($angle, $distance, $pull-to) {
+  bottom: 15px;
+  box-shadow: 0 15px 10px $asbestos;
+  content: '';
+  height: 20px;
+  opacity: 0.8;
+  position: absolute;
+  width: 50%;
+  z-index: -1;
+  @if $pull-to == 'left' {
+    left: $distance;
+    transform: rotate($angle * -1);
+  } @else if $pull-to == 'right' {
+    right: $distance;
+    transform: rotate($angle);
+  }
+}
+
+.card-portfront {
+  background-color: $pure-white;
+  border-radius: 0;
+  position: relative;
+
+  &__caption {
+    padding: 1em;
+  }
+
+  &__illustration {
+    color: $midnight-blue;
+    text-align: center;
+    opacity: .7;
+    transition: opacity .3s linear, transform .5s ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: $american-river;
+    display: block;
+    line-height: 50px;
+    transition: all .3s linear;
+  }
+
+  &:hover {
+    transition: all .3s linear;
+
+    &:after {
+      @include shadow(3deg, 5px, 'right');
+    }
+
+    &:before {
+      @include shadow(3deg, 5px, 'left');
+    }
+
+    .card-portfront {
+      &__btn {
+        background-color: lighten($main-color, 30%);
+        color: $clouds;
+
+        &:hover {
+          background-color: $midnight-blue;
+        }
+      }
+
+      &__illustration {
+        transform: scale(1.15)
+      }
+    }
+  }
+}
