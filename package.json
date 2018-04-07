@@ -14,10 +14,11 @@
     "mkdirp": "^0.5.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run createdir && cp -r node_modules/bootstrap/dist src/assets/bootstrap/ && cp -r node_modules/font-awesome/css src/assets/font-awesome/ && cp -r node_modules/font-awesome/fonts src/assets/font-awesome/ && cp -r assets/images/ src/assets/ && gulp sass",
-    "createdir": "mkdirp src/assets/bootstrap/ src/assets/font-awesome/ src/assets/css/ src/assets/images/",
-    "gulp": "gulp"
+    "build": "npm run postinstall",
+    "createdir": "mkdirp src/assets/bootstrap/ src/assets/font-awesome/ src/assets/css/ src/assets/images/ src/assets/js/",
+    "gulp": "gulp",
+    "postinstall": "npm run createdir && cp -r node_modules/bootstrap/dist src/assets/bootstrap/ && cp -r node_modules/font-awesome/css src/assets/font-awesome/ && cp -r node_modules/font-awesome/fonts src/assets/font-awesome/ && cp -r assets/images/ src/assets/ && cp -r assets/js/ src/assets/ && npm run gulp sass && npm run gulp imageMin",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
