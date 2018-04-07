@@ -4,8 +4,8 @@
   "description": "A portfolio detailing my experience as a web developer",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "font-awesome": "^4.7.0"
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.5",
+    "bootstrap": "^4.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -17,7 +17,7 @@
     "build": "npm run postinstall",
     "createdir": "mkdirp src/assets/bootstrap/ src/assets/font-awesome/ src/assets/css/ src/assets/images/ src/assets/js/",
     "gulp": "gulp",
-    "postinstall": "npm run createdir && cp -r node_modules/bootstrap/dist src/assets/bootstrap/ && cp -r node_modules/font-awesome/css src/assets/font-awesome/ && cp -r node_modules/font-awesome/fonts src/assets/font-awesome/ && cp -r assets/images/ src/assets/ && cp -r assets/js/ src/assets/ && npm run gulp sass && npm run gulp imageMin",
+    "postinstall": "npm run createdir && cp -r node_modules/bootstrap/dist src/assets/bootstrap/ && cp -r node_modules/@fortawesome/fontawesome-free-webfonts/webfonts/ src/assets/font-awesome/webfonts/ && cp -r assets/images/ src/assets/ && cp -r assets/js/ src/assets/ && npm run gulp sass && npm run gulp imageMin",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
