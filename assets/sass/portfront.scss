@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Sansita');
 @import "base";
-@import "_partials/header";
 @import "_partials/card";
+@import "_partials/footer";
+@import "_partials/header";
 @import "variables";
 
 @each $key, $value in $sizes {
