@@ -2,12 +2,12 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const imageMin = require('gulp-imagemin');
 
-gulp.task('default', ['sass', 'imageMin', 'watch']);
+gulp.task('default', ['font-awesome', 'imageMin', 'sass', 'watch']);
 
-gulp.task('sass', () => {
-    gulp.src('./assets/sass/**/*.scss')
+gulp.task('font-awesome', () => {
+    gulp.src('./node_modules/@fortawesome/fontawesome-free-webfonts/scss/**/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./src/assets/css/'));
+        .pipe(gulp.dest('./src/assets/font-awesome/css/'));
 });
 
 gulp.task('imageMin', () => {
@@ -16,6 +16,12 @@ gulp.task('imageMin', () => {
             imageMin.optipng({optimizationLevel: 7})
         ]))
         .pipe(gulp.dest('./src/assets/images/'));
+});
+
+gulp.task('sass', () => {
+    gulp.src('./assets/sass/**/*.scss')
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(gulp.dest('./src/assets/css/'));
 });
 
 gulp.task('watch', () => {
