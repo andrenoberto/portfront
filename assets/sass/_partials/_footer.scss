@@ -1,0 +1,34 @@
+@import "../variables";
+
+footer {
+  background-color: $wet-asphalt;
+  color: $pure-white;
+  padding: 1em 0;
+
+  ul {
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    width: 100%;
+
+    li {
+      box-sizing: border-box;
+      float: left;
+      list-style: none;
+      padding: 0;
+      width: 20%;
+    }
+
+    li a {
+      color: $pure-white;
+      display: block;
+      font-size: 1.5em;
+      text-align: center;
+      transition: color .3s linear;
+
+      &:hover {
+        color: lighten($wet-asphalt, 10%);
+      }
+    }
+  }
+}
