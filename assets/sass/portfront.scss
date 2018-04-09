@@ -4,9 +4,3 @@
 @import "_partials/footer";
 @import "_partials/header";
 @import "variables";
-
-@each $key, $value in $sizes {
-  .#{$key} {
-    font-size: $value;
-  }
-}
