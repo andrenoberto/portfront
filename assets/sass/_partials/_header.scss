@@ -132,7 +132,7 @@
       }
     }
 
-    .non-static & {
+    .non-menu & {
       display: none;
     }
 
@@ -159,7 +159,7 @@
   &__navbar {
     display: none;
 
-    .non-static & {
+    .non-menu & {
       background: transparent;
       border: none;
       color: $clouds;
@@ -182,7 +182,7 @@
     }
   }
 
-  .non-static & {
+  .non-menu & {
     height: $header-static-height;
 
     .container {
