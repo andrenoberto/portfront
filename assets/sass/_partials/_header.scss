@@ -25,6 +25,20 @@
   background-image: url($url);
 }
 
+.js.menu-opened {
+  overflow: hidden;
+  &:after {
+    background: rgba(0, 0, 0, .25);
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: $header-static-height;
+  }
+}
+
 .jumbotron {
   &.header-animated {
     border-radius: 0;
@@ -134,22 +148,14 @@
 
     .js & {
       @media screen and (max-width: #{$break-point}) {
+        background: darken($midnight-blue, 15);
         bottom: 0;
         left: -100%;
         position: fixed;
         top: $header-static-height;
         transition: left .3s ease-out;
-        width: 100%;
-      }
-
-      @media screen and (min-width: #{$break-point}) {
-        display: inline-block;
-        float: right;
-        height: $header-static-height;
-
-        li {
-          display: inline-block;
-        }
+        width: 80%;
+        z-index: 2;
       }
     }
 
@@ -158,6 +164,16 @@
 
       @media screen and (max-width: #{$break-point}) {
         left: 0;
+      }
+    }
+
+    @media screen and (min-width: #{$break-point}) {
+      display: inline-block;
+      float: right;
+      height: $header-static-height;
+
+      li {
+        display: inline-block;
       }
     }
   }
@@ -193,6 +209,10 @@
 
       &:focus, &:hover {
         background: lighten($main-color, 5%);
+      }
+
+      @media screen and (min-width: #{$break-point}) {
+        display: none;
       }
     }
   }
