@@ -132,12 +132,33 @@
       }
     }
 
-    .non-menu & {
-      display: none;
+    .js & {
+      @media screen and (max-width: #{$break-point}) {
+        bottom: 0;
+        left: -100%;
+        position: fixed;
+        top: $header-static-height;
+        transition: left .3s ease-out;
+        width: 100%;
+      }
+
+      @media screen and (min-width: #{$break-point}) {
+        display: inline-block;
+        float: right;
+        height: $header-static-height;
+
+        li {
+          display: inline-block;
+        }
+      }
     }
 
     .menu-opened & {
       display: block;
+
+      @media screen and (max-width: #{$break-point}) {
+        left: 0;
+      }
     }
   }
 
@@ -159,7 +180,7 @@
   &__navbar {
     display: none;
 
-    .non-menu & {
+    .js & {
       background: transparent;
       border: none;
       color: $clouds;
@@ -182,7 +203,7 @@
     }
   }
 
-  .non-menu & {
+  .js & {
     height: $header-static-height;
 
     .container {
